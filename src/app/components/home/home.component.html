@@ -1,0 +1,28 @@
+<main class="">
+    <p class="w-5/6 text-center m-auto my-16">{{intro}}</p>
+
+    <!-- <button (click)="direBonjour()">cliquez moi</button> -->
+    <section class="flex flex-wrap justify-evenly">
+        @if(isLoading) {
+        <div class="flex justify-center items-center">
+            <img src="loading.gif" alt="" class="w-48">
+        </div>
+        }@else if(announcements && announcements.length > 0){
+        @for(announcement of announcements; track announcement.id){
+        <app-announcement-item [announcement]=announcement class="w-1/4 m-5"></app-announcement-item>
+        }
+        }@else {
+        <p class="flex justify-center p-20 text-4xl font-bold">Aucune annonces trouvées</p>
+        }
+
+    </section>
+
+    <!-- <div class="flex">
+        @for (image of gallery; track image) {
+        <img [src]="image" alt="" class="w-1/6 h-48">
+        }
+    </div> -->
+
+
+
+</main>

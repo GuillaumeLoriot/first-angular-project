@@ -1,0 +1,44 @@
+@if(announcement){
+<div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+    <div class="w-full">
+
+        <img [src]="announcement.imageCover" alt="{{announcement.title}}" class="w-full h-48 object-cover">
+        <div class="flex">
+            @for(image of announcement.images; track image.id){
+            <img [src]="image.imageUrl" alt="test" class="h-16 border-2 border-t-4 border-blue-950">
+            }
+        </div>
+    </div>
+    <div class="p-5">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-2">{{ announcement.title }}</h2>
+        <div class="text-2xl text-gray-500 mb-1">
+            <span class="font-medium">{{ announcement.city }}</span> 
+        </div>
+
+        <p class="text-gray-600 text-sm mb-3">{{ announcement.description }}</p>
+
+        <div class="text-sm text-gray-500 mb-1">
+            <span class="font-medium">Adresse :</span> {{ announcement.address }}
+        </div>
+
+        <div class="text-sm text-gray-500">
+            <p>
+                <span class="font-medium">Capacité :</span> {{ announcement.maxClient }} personne
+            </p>
+        </div>
+        <div class="text-sm text-gray-500">
+            <p>
+                <span class="font-medium">Prix :</span> {{ announcement.dailyPrice }} €/jour
+            </p>
+        </div>
+        <a [routerLink]="['detail', announcement.id]"
+            [ngClass]="announcement.dailyPrice <= 50 ? 'block w-full bg-green-700 my-5 p-2 transform text-white text-center rounded-lg font-bold tracking-wide hover:text-slate-400 hover:scale-95 transition-all duration-500' : 'block w-full bg-gray-800 my-5 p-2 transform text-white text-center rounded-lg font-bold tracking-wide hover:text-slate-400 hover:scale-95 transition-all duration-500'">Voir
+            plus</a>
+    </div>
+</div>
+}
+@else {
+<div>
+    <p>LOADING</p>
+</div>
+}
