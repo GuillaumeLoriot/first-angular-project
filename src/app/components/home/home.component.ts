@@ -2,7 +2,6 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import Announcement from '../../models/announcement.interface';
-import { RouterLink } from '@angular/router';
 import { AnnouncementItemComponent } from "../announcement-item/announcement-item.component";
 import { AnnouncementService} from '../../services/announcement.service';
 
@@ -11,7 +10,7 @@ import { AnnouncementService} from '../../services/announcement.service';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterLink, AnnouncementItemComponent],
+  imports: [CommonModule, AnnouncementItemComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
   
