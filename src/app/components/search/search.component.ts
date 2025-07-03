@@ -58,9 +58,8 @@ export class SearchComponent {
   getFieldError(fieldName: string): string {
     const field = this.searchForm.get(fieldName);
     if (field && field.errors) {
-      if (field.errors['required']) return `${fieldName} est obligatoire`;
       if (field.errors['min']) return `${fieldName} doit être supérieur à ${field.errors['min'].min}`;
-      if (field.errors['max']) { return `doit être inférieur à ${field.errors['max'].max}`; }
+      if (field.errors['max']) { return `${fieldName} doit être inférieur à ${field.errors['max'].max}`; }
     }
     return '';
   }
