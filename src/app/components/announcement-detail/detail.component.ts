@@ -2,11 +2,12 @@ import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import Announcement from '../../models/announcement.interface';
 import { AnnouncementService } from '../../services/announcement.service';
+import { EquipmentIconPipe } from '../../pipes/equipment-icon.pipe';
 
 @Component({
   selector: 'app-detail',
   standalone: true,
-  imports: [],
+  imports: [EquipmentIconPipe],
   templateUrl: './detail.component.html',
   styleUrl: './detail.component.css'
 })
