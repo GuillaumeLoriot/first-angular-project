@@ -52,6 +52,7 @@ export class HomeComponent implements OnInit {
       // mais voir pour gérer les différentes erreurs plus tard
       error: () => {
 
+        console.log("Une erreur est survenue")
         this.announcements = [];
         this.isLoading = false;
 
