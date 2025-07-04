@@ -41,7 +41,13 @@ export class LoginComponent {
           console.log(data.token);
           this.isLoading = false;
           this.router.navigate(['/profile']);
-        }
+        },
+        error: () => {
+        
+        console.log('Une erreur est survenue')
+        this.isLoading = false;
+
+      },
       });
 
       //   setTimeout(() => {
